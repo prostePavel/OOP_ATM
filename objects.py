@@ -58,8 +58,7 @@ def menu():
     elif choice == 3:
         transfer()
     elif choice == 4:
-        # TODO: výběr
-        print("")
+        withdraw()
     elif choice == 5:
         # TODO: vklad
         print("")
@@ -87,6 +86,15 @@ def transfer():
     amount = input("Částka:")
 
     bank_accounts[int(index_to)].transfer(bank_accounts[int(index_from)], int(amount))
+
+def withdraw():
+    print("Dostupné účty:")
+    print_accounts()
+
+    index_from = input("\nz jakého účtu:")
+    amount = input("částka:")
+
+    bank_accounts[int(index_from)].withdraw(int(amount))
 
 menu()
 
