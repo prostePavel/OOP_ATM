@@ -60,8 +60,7 @@ def menu():
     elif choice == 4:
         withdraw()
     elif choice == 5:
-        # TODO: vklad
-        print("")
+        deposit()
     else:
         print("Chybná akce, vyber znovu")
 
@@ -95,6 +94,15 @@ def withdraw():
     amount = input("částka:")
 
     bank_accounts[int(index_from)].withdraw(int(amount))
+
+def deposit():
+    print("Dostupné účty:")
+    print_accounts()
+
+    index_to = input("\nDo jakého účtu:")
+    amount = input("částka:")
+
+    bank_accounts[int(index_to)].deposit(int(amount))
 
 menu()
 
