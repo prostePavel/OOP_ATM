@@ -1,5 +1,3 @@
-
-
 class BankAccount:
     def __init__(self, account_holder, initial_balance=0):
         self.account_holder = account_holder
@@ -47,7 +45,7 @@ class ATM:
 
         choice = int(input("Zvolte akci:"))
         if choice == 1:
-            self.print_accounts()
+            self.print_accounts_atm()
         elif choice == 2:
             self.add_account()
         elif choice == 3:
@@ -61,12 +59,14 @@ class ATM:
 
 
 
-    def print_accounts(self):
+    def print_accounts_atm(self):
         i = 0
         for bank_account in bank_accounts:
             print(f"{i} - {bank_account.account_holder}")
             i += 1
+
         self.menu()
+
 
     def add_account(self):
         name = input("Název účtu: ")
@@ -107,6 +107,12 @@ class ATM:
         bank_accounts[int(index_to)].deposit(int(amount))
 
         self.menu()
+
+    def print_accounts(self):
+        i = 0
+        for bank_account in bank_accounts:
+            print(f"{i} - {bank_account.account_holder}")
+            i += 1
 
 
 #
